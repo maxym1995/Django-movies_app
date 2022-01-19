@@ -1,0 +1,41 @@
+<html>
+<h1>Filmy</h1>
+<body background="https://s6.tvp.pl/images2/f/e/8/uid_fe8900152e8fdea154d4ed54709144461593060249996_width_1280_play_0_pos_0_gs_0_height_720_steven-seagal-otrzymal-rosyjskie-obywatelstwo-fot-kremlinru.jpg", >
+<div>
+<p style="color:white;font-size:18px;">
+    <form action="" method="POST"> {% csrf_token %}
+    <label for ="sorting">Sortuj po dacie produkcji:</label>
+    <select name="sorting" id ="sorting">
+        <option value ="default">standardowo</option>
+        <option value ="malejaco">malejaco</option>
+        <option value ="rosnaco">rosnaco</option>
+
+    </select>
+      <button type ="submit">Sortuj</button>
+
+<ul>
+  {% for movie in movies %}
+
+  <li>
+
+    <a style="font-size:21px;" href="http://127.0.0.1:8000/movie-details/{{movie.id}}"{{ movie.title}} </a> {{ movie.title}}  <br>
+    <a style="color:black;font-size:19px;">Rezyser: {{movie.director.first_name}} {{movie.director.last_name}} Rok produkcji: {{movie.year}} Ocena: {{movie.rating}}<a/>
+    <a style="color:blue; font-size: 15px;" href="http://127.0.0.1:8000/edit_movie/{{movie.id}}" Edytuj </a> Edytuj
+    </li>
+  {% endfor %}
+
+</ul>
+</p>
+  </div>
+
+<div>
+<p>
+<a style="color:brown; font-size: 20px; " class="btn btn-primary" href="http://127.0.0.1:8000/add_movie/" Dodaj film </a> Dodaj film
+</p>
+<!--<p>-->
+<!--<button  style="font-size: 20px" class="btn btn-primary";type="submit"; href="http://127.0.0.1:8000/add_movie/" >Dodaj film</button>-->
+<!--</p>-->
+  </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<html>
+<h1>Osoby</h1>
+<body background="https://s6.tvp.pl/images2/f/e/8/uid_fe8900152e8fdea154d4ed54709144461593060249996_width_1280_play_0_pos_0_gs_0_height_720_steven-seagal-otrzymal-rosyjskie-obywatelstwo-fot-kremlinru.jpg", >
+<p style="color:white;font-size:18px;">
+<ul>
+  {% for person in persons %}
+  <li>
+    <a style="color:#00363a;font-size:19px;">{{person.first_name}} {{person.last_name}}<a/>
+    <a style="color:blue; font-size: 15px;" href="http://127.0.0.1:8000/edit_person/{{person.id}}" Edytuj </a> Edytuj
+  </li>
+  {% endfor %}
+
+</ul>
+</p>
+<p>
+<a style="color:blue; font-size: 20px;" href="http://127.0.0.1:8000/add_person/" Dodaj osobe </a> Dodaj osobe
+</p>
+</body>
+</html>
+
+
+
+

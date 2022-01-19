@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home Page</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sticky-footer/">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <style>
+    .footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 60px; /* Set the fixed height of the footer here */
+      line-height: 60px; /* Vertically center the text there */
+      background-color: #f5f5f5;
+    }
+  </style>
+</head>
+<body background="https://ocdn.eu/pulscms-transforms/1/F0Qk9kpTURBXy83MTZjMTkyNjc4NTcxM2U4NWQ3ZmViYjNiNzlhYTA0Yy5qcGeSlQMAFc0EAM0CQJMFzQNIzQH6gqEwBaExAQ">
+<form action="" method="POST">
+<div class="card">
+  <div class="card-body">
+    <form action="" method="POST">{% csrf_token %}
+      <div>
+        Edytujesz osobe : {{person.first_name}} {{person.last_name}} <br><br>
+        Nowe Parametry:<br><br>
+      </div>
+
+      <div class="form-group">
+        <label for="room-name">Imie</label>
+        <input type="text" class="form-control" id="first_name" aria-describedby="first-name-help" placeholder="Imie" name="first_name", required>
+        <small id="first_name-help" class="form-text text-muted">Tu podaj imie</small>
+      </div>
+      <div class="form-group">
+        <label for="room-name">Nazwisko</label>
+        <input type="text" class="form-control" id="last_name" aria-describedby="last-name-help" placeholder="Nazwisko" name="last_name", required>
+        <small id="last_name-help" class="form-text text-muted">Tu podaj nazwisko</small>
+      </div>
+      <div>
+        <input type="hidden", id="person_id" name = "person_id" value ="{{person_id}}">
+      </div>
+
+<!--      bez tego nie dziala, ale czy to jest wgl dobrze-->
+
+  <button  class="btn btn-primary";type="submit"; href="http://127.0.0.1:8000/persons/" >Edytuj dane</button>
+</form>
+</body>
+</html>

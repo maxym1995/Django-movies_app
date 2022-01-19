@@ -1,0 +1,44 @@
+<html>
+<h1>Filmy</h1>
+<body background="https://s6.tvp.pl/images2/f/e/8/uid_fe8900152e8fdea154d4ed54709144461593060249996_width_1280_play_0_pos_0_gs_0_height_720_steven-seagal-otrzymal-rosyjskie-obywatelstwo-fot-kremlinru.jpg", >
+<div>
+<p style="color:white;font-size:18px;">
+    <form action="" method="POST"> {% csrf_token %}
+
+
+Wybierz parametry:
+<ul>
+{#  {% for movie in movies %}#}
+
+      <li>
+      <label for="room-name">Tytul</label>
+      <input type="text" class="form-control" id="title" aria-describedby="title-help" placeholder="Tytul" name="title",  >
+      </li>
+      <li>
+        <label for="room-name">Rok produkcji</label>
+        od: <input type="number" class="form-control" id="year" aria-describedby="year-help" placeholder="Rok" name="year_od"> do:
+        <input type="number" class="form-control" id="year" aria-describedby="year-help" placeholder="Rok" name="year_do", >
+      </li>
+      <li>
+          <label for="room-name">Imie</label>
+          <input type="text" class="form-control" id="name" aria-describedby="title-help" placeholder="Imie" name="name" ></li>
+      <li>
+          <label for="room-name">Nazwisko</label>
+          <input type="text" class="form-control" id="surname" aria-describedby="title-help" placeholder="Nazwisko" name="surname",  ></li>
+
+      </li>
+
+      <li>
+        <label for="room-name">Ocena</label>
+        od: <input type="number" step ="0.1" min ="1" max ="10"c lass="form-control" id="rating" aria-describedby="rating-help" placeholder="Ocena" name="rating_od"> do:
+        <input type="number" step ="0.1" min ="1" max ="10"c lass="form-control" id="rating" aria-describedby="rating-help" placeholder="Ocena" name="rating_do">
+      </li>
+{#  {% endfor %}#}
+
+</ul>
+</p>
+  </div>
+<button type ="submit">Szukaj</button>
+</form>
+</body>
+</html>
